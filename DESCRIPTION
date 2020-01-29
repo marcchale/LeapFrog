@@ -1,0 +1,31 @@
+Package: LeapFrog
+Type: Package
+Title: LeapFrog for TSP
+Version: 1.0
+Date: 2020-01-13
+Authors@R: person("Brandon", "Hufstetler", email = "bjhufstetler@gmail.com", role = c("aut", "cre"))
+Maintainer: Brandon Hufstetler <bjhufstetler@gmail.com>
+Description: LeapFrog (LF) is a single agent metaheuristic search algorithm for the traveling salesman problem (TSP). 
+             LeapFrog can visualize the best-yet tour (given a coordinate matrix) or the current and best known 
+             objective values during execution. After completion, LeapFrog will output a list containing the iteration 
+             level objective value plot, a plot of the best tour route (given a coordinate matrix), the best found 
+             objective value, and a vector containing the best found tour. LeapFrog is developed for users looking for 
+             a fast metaheuristic to solve instances of non-symmetrical Traveling Salesman Problems. Logistic route 
+             planners may find LF useful for quickly developing routes to multiple destinations, especially when the 
+             directional travel time between locations is not symmetrical. Since LF is single agent, no parallel 
+             processing capabilities are required to optimize the solution time. LeapFrog is designed to be easily 
+             implemented for users of any skill level. The user is expected to provide either a distance matrix 
+             (required for non-symmetrical instances), a coordinate matrix (required for mapping outputs, or is the 
+             sole requirement for symmetrical instances), or both. The outputs are straight-forward and easy to 
+             understand and present to decision makers. LeapFrog utilizes a random removal and insertion approach 
+             with a sinusoidal temperature function to create solution vectors. Each wave of the sinusoidal 
+             temperature moves the agent to a new solution space to accomplish diversification. As the temperature 
+             decreases, the agent explores the current solution space in detail to accomplish intensification. 
+             LeapFrog is available for download as a .zip file or can be installed in R directly from GitHub using 
+             the devtools package. There are no security concerns associated with LeapFrog. The map output is 
+             constrained by visuals found in the suggested packages.
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.3)
+LinkingTo: Rcpp
+RoxygenNote: 7.0.2
+Encoding: UTF-8
