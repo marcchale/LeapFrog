@@ -14,4 +14,10 @@ ts225_dist
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other ts225: 
+\code{\link{ts225_coord}},
+\code{\link{ts225_optimal}}
+}
+\concept{ts225}
 \keyword{datasets}

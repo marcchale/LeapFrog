@@ -14,4 +14,10 @@ gr120_dist
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other gr120: 
+\code{\link{gr120_coord}},
+\code{\link{gr120_optimal}}
+}
+\concept{gr120}
 \keyword{datasets}

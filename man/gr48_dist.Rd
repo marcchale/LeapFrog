@@ -14,4 +14,10 @@ gr48_dist
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other gr48: 
+\code{\link{gr48_coord}},
+\code{\link{gr48_optimal}}
+}
+\concept{gr48}
 \keyword{datasets}

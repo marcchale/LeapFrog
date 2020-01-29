@@ -18,4 +18,10 @@ KroA100_coord
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other KroA100: 
+\code{\link{KroA100_dist}},
+\code{\link{KroA100_optimal}}
+}
+\concept{KroA100}
 \keyword{datasets}

@@ -14,4 +14,10 @@ pma343_dist
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other pma343: 
+\code{\link{pma343_coord}},
+\code{\link{pma343_optimal}}
+}
+\concept{pma343}
 \keyword{datasets}

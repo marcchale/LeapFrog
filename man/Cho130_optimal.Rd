@@ -14,4 +14,10 @@ Cho130_optimal
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other Cho130: 
+\code{\link{Cho130_coord}},
+\code{\link{Cho130_dist}}
+}
+\concept{Cho130}
 \keyword{datasets}

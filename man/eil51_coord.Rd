@@ -18,4 +18,10 @@ eil51_coord
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other eil51: 
+\code{\link{eil51_dist}},
+\code{\link{eil51_optimal}}
+}
+\concept{eil51}
 \keyword{datasets}

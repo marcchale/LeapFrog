@@ -14,4 +14,10 @@ Bays29_optimal
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other Bays29: 
+\code{\link{Bays29_coord}},
+\code{\link{Bays29_dist}}
+}
+\concept{Bays29}
 \keyword{datasets}

@@ -14,4 +14,9 @@ pr76_dist
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other pr76: 
+\code{\link{pr76_coord}}
+}
+\concept{pr76}
 \keyword{datasets}

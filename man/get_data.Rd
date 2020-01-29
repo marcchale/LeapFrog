@@ -10,10 +10,10 @@ get_data(
 )
 }
 \arguments{
-\item{map}{A \code{string} description of the desired instance information.}
+\item{course}{A \code{string} description of the desired instance information.}
 }
 \description{
-Outputs a list containing the distance matrix and coordinate matrix from a TSPLIB data instance
+Outputs a list containing the name, distance matrix, coordinate matrix, and known optimal value from a TSPLIB data instance
 }
 \examples{
 put example here

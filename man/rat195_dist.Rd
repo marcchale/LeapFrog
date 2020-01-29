@@ -14,4 +14,10 @@ rat195_dist
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other rat195: 
+\code{\link{rat195_coord}},
+\code{\link{rat195_optimal}}
+}
+\concept{rat195}
 \keyword{datasets}

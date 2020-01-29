@@ -14,4 +14,10 @@ pcb442_dist
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other pcb442: 
+\code{\link{pcb442_coord}},
+\code{\link{pcb442_optimal}}
+}
+\concept{pcb442}
 \keyword{datasets}

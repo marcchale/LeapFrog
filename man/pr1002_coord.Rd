@@ -18,4 +18,10 @@ pr1002_coord
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other pr1002: 
+\code{\link{pr1002_dist}},
+\code{\link{pr1002_optimal}}
+}
+\concept{pr1002}
 \keyword{datasets}

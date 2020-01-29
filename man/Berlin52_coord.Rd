@@ -18,4 +18,10 @@ Berlin52_coord
 \description{
 Dataset curated by TSPLIB
 }
+\seealso{
+Other Berlin52: 
+\code{\link{Berlin52_dist}},
+\code{\link{Berlin52_optimal}}
+}
+\concept{Berlin52}
 \keyword{datasets}
