@@ -2,6 +2,7 @@
 
 export(coord_to_dist)
 export(get_data)
+export(plot_tour)
 export(pv)
 importFrom(Rcpp,evalCpp)
 useDynLib(LeapFrog, .registration=TRUE)

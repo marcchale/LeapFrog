@@ -4,10 +4,10 @@
 \alias{coord_to_dist}
 \title{Convert Coordinate Data.Frame to Distance Matrix}
 \usage{
-coord_to_dist(coordMatrix, LatLong = FALSE)
+coord_to_dist(coordMatrix)
 }
 \arguments{
-\item{coordMatrix}{A \code{n}x\code{2 or 3 data.frame} wwhere first row is not column headers. 
+\item{coordMatrix}{A \code{n}x\code{2 or 3 data.frame} where first row is not column headers. 
 The first and second columns must contain the \code{x} and \code{y} coordinates of each node.
 The third column (optional) must contain ids for each node.}
 }

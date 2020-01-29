@@ -11,10 +11,3 @@ test_that("coord_to_dist has correct dimensions and output type", {
   expect_true(dim(coord_to_dist(data.frame(matrix(1, ncol = 2, nrow = 3))))[1] == 
                 dim(coord_to_dist(data.frame(matrix(1, ncol = 2, nrow = 3))))[2])
 })
-
-
-
-
-
-
-

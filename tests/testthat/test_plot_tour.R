@@ -1,0 +1,10 @@
+test_that("coord_to_dist provides proper messages and warnings", {
+  expect_error(plot_tour(coordMatrix = 1, tour = 1))
+  expect_error(plot_tour(coordMatrix = data.frame(matrix(1, ncol = 4, nrow = 3)), tour = 1:3))
+  expect_error(plot_tour(coordMatrix = data.frame(matrix("a", ncol = 3, nrow = 3)), tour = 1:3))
+  expect_error(plot_tour(coordMatrix = data.frame(matrix(1, ncol = 3, nrow = 2)), tour = 1:2))
+  expect_error(plot_tour(coordMatrix = data.frame(matrix(1, ncol = 3, nrow = 3)), tour = matrix(1, ncol = 1, nrow = 3)))
+  expect_error(plot_tour(coordMatrix = data.frame(matrix(1, ncol = 3, nrow = 3)), tour = c("a","b","c")))
+  expect_error(plot_tour(coordMatrix = data.frame(matrix(1, ncol = 3, nrow = 3)), tour = 1:4))
+  expect_error(plot_tour(coordMatrix = data.frame(matrix(1, ncol = 3, nrow = 3)), tour = c(1,2,2)))
+})
