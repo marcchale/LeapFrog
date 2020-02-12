@@ -67,6 +67,7 @@ dist <- function(vector){
 }
 plot.dist <- data.frame(0,dist(tour),course.dist) # Used to track the tour lengths over time
 names(plot.dist) <- c("iteration", "distance", "optimal")
+
 # Placement Function
 
 land.dist <- function(vector, scalar){
@@ -104,11 +105,11 @@ while (stop.crit == FALSE){
   # Jump
   jumpers <- sample(1:node.count, size=ceiling(p)) # Choose the jumpers
   tour <- tour[!(tour %in% jumpers)]
-  tour.x <- course.coords$X[match(tour,course.coords$Node)]
-  tour.y <- course.coords$Y[match(tour,course.coords$Node)]
-  plot.coords.new <- cbind(rep(2,length(tour)),tour,tour.x,tour.y)
-  plot.coords <- rbind(plot.coords,plot.coords.new)
-  plot.coords <- rbind(plot.coords,plot.coords[(dim(plot.coords)[1]-length(tour)+1),])
+  #tour.x <- course.coords$X[match(tour,course.coords$Node)]
+  #tour.y <- course.coords$Y[match(tour,course.coords$Node)]
+  #plot.coords.new <- cbind(rep(2,length(tour)),tour,tour.x,tour.y)
+  #plot.coords <- rbind(plot.coords,plot.coords.new)
+  #plot.coords <- rbind(plot.coords,plot.coords[(dim(plot.coords)[1]-length(tour)+1),])
   # Land
   for (i in 1:ceiling(p)){
     land.values <- land.dist(tour, jumpers[i]) # Calculate the benefit from each landing spot
@@ -125,11 +126,11 @@ while (stop.crit == FALSE){
     }else{
       tour <- c(tour,jumpers[i])  
     }
-    tour.x <- course.coords$X[match(tour,course.coords$Node)]
-    tour.y <- course.coords$Y[match(tour,course.coords$Node)]
-    plot.coords.new <- cbind(rep((i+2),length(tour)),tour,tour.x,tour.y)
-    plot.coords <- rbind(plot.coords,plot.coords.new)
-    plot.coords <- rbind(plot.coords,plot.coords[(dim(plot.coords)[1]-length(tour)+1),])
+    #tour.x <- course.coords$X[match(tour,course.coords$Node)]
+    #tour.y <- course.coords$Y[match(tour,course.coords$Node)]
+    #plot.coords.new <- cbind(rep((i+2),length(tour)),tour,tour.x,tour.y)
+    #plot.coords <- rbind(plot.coords,plot.coords.new)
+    #plot.coords <- rbind(plot.coords,plot.coords[(dim(plot.coords)[1]-length(tour)+1),])
   }
   
   # Recalculate

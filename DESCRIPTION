@@ -25,9 +25,17 @@ Description: LeapFrog (LF) is a single agent metaheuristic search algorithm for 
              the devtools package. There are no security concerns associated with LeapFrog. The map output is 
              constrained by visuals found in the suggested packages.
 License: GPL (>= 2)
-Imports: Rcpp (>= 1.0.3)
-LinkingTo: Rcpp
+Depends: R (>= 2.10),
+         reticulate
+Imports: Rcpp (>= 1.0.3),
+         RcppNumerical,
+         shiny
+LinkingTo: Rcpp(>= 1.0.0),
+           BH(>= 1.58.0-1),
+           RcppEigen,
+           RcppNumerical
 RoxygenNote: 7.0.2
 Encoding: UTF-8
+SystemRequirements: python (>=3.5)
 Suggests: 
     testthat
