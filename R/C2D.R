@@ -8,7 +8,7 @@
 #' put example here
 #' 
 
-coord_to_dist <- function(coordMatrix){
+C2D <- function(coordMatrix){
   #check to see if coordMatrix is a data.frame
   if(!is.data.frame(coordMatrix)){
     stop("Invalid Parameter: coordMatrix must be a data frame")

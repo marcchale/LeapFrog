@@ -6,7 +6,7 @@ cat("\f")
 # Setup
 library(readxl)
 library(plotly)
-setwd("~/Documents/Brandon/AFIT/2019_Q2/OPER_623 Heuristic Search Methods/Project/leapfrog")
+setwd("~/Documents/Brandon/AFIT/2020_Q1/LeapFrog")
 load("course_list.RData")
 load("coords.RData")
 
@@ -18,7 +18,7 @@ game.map <- 6 # Pick which map to use [1,13]
 game.max <- 1 # Total number of games played
 game.settings.recommended <- FALSE # Defaults to recommended settings based on node count
 
-game.players <- 1 # Number of players [1, number of nodes]
+game.players <- 5 # Number of players [1, number of nodes]
 game.accuracy <- .1 # Starting accuracy of the players (0,1]
 game.length <- 1 # Iterations in each round
 game.players.loss <- FALSE # dynamic player count
@@ -55,16 +55,16 @@ if(game.settings.recommended == TRUE){
 
 # Distance Function
 
-dist <- function(vector){
-  temp.dist <- 0 # Reset distance stored in memory
-  for (k in 1:(node.count-1)){
-    temp.dist <- sum(distance.matrix[tour[k],tour[k+1]], # Distance from first to second node
-                     temp.dist) # Previous sum of distances
-  } 
-  temp.dist <- sum(distance.matrix[tour[node.count],tour[1]], # Distance from first to second node
-                   temp.dist) # Previous sum of distances
-  return(temp.dist)
-}
+# dist <- function(vector){
+#   temp.dist <- 0 # Reset distance stored in memory
+#   for (k in 1:(node.count-1)){
+#     temp.dist <- sum(distance.matrix[tour[k],tour[k+1]], # Distance from first to second node
+#                      temp.dist) # Previous sum of distances
+#   } 
+#   temp.dist <- sum(distance.matrix[tour[node.count],tour[1]], # Distance from first to second node
+#                    temp.dist) # Previous sum of distances
+#   return(temp.dist)
+# }
 plot.dist <- data.frame(0,dist(tour),course.dist) # Used to track the tour lengths over time
 names(plot.dist) <- c("iteration", "distance", "optimal")
 

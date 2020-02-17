@@ -8,7 +8,7 @@
 #' put example here
 #' 
 
-tour_length <- function(distMatrix, tour){
+TourLength <- function(distMatrix, tour){
   #check to see if distMatrix is a matrix
   if(!is.matrix(distMatrix)){
     stop("Invalid Parameter: distMatrix must be a matrix")
