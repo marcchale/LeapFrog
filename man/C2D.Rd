@@ -14,7 +14,3 @@ The third column (optional) must contain ids for each node.}
 \description{
 Convert coordinate Matrix into symmetric distance matrix using euclidean distance function
 }
-\examples{
-put example here
-
-}

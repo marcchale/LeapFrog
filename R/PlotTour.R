@@ -6,8 +6,6 @@
 #' The third column (optional) must contain ids for each node. 
 #' @param tour A \code{numeric} vector with the order that the nodes in the coordDF are visited. Must be the same length as the coordDF
 #' @param latlong A \code{boolean} value. \code{TRUE} if coordinates are latitudes and longitudes, \code{FALSE} otherwise.
-#' @examples 
-#' put example here
 #' 
 
 PlotTour <- function(coordDF, tour, latlong = FALSE){

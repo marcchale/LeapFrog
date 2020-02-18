@@ -13,7 +13,3 @@ Each cell represents the distance from the row index node to the column index no
 \description{
 Takes a distance matrix and converts it into a coordinate tibble
 }
-\examples{
-put example here
-
-}

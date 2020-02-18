@@ -38,7 +38,3 @@ The third column (optional) must contain ids for each node.}
 \description{
 Takes a distance matrix and searches for an optimal tour
 }
-\examples{
-put example here
-
-}

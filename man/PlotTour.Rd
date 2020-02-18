@@ -18,7 +18,3 @@ The third column (optional) must contain ids for each node.}
 \description{
 Takes a coordinate matrix and plots a tour through it
 }
-\examples{
-put example here
-
-}

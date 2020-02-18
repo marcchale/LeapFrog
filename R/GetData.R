@@ -2,8 +2,7 @@
 #' @description Outputs a list containing the name, distance matrix, coordinate matrix, and known optimal value from a TSPLIB data instance
 #' @export
 #' @param course A \code{string} description of the desired instance information.
-#' @examples 
-#' put example here
+#' 
 
 GetData <- function(course = c("eil51", "ts225", "pr1002", "gr120", "rat195", 
                              "Bays29", "Berlin52", "Cho130", "KroA100", 

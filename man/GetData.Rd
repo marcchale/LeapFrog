@@ -15,6 +15,3 @@ GetData(
 \description{
 Outputs a list containing the name, distance matrix, coordinate matrix, and known optimal value from a TSPLIB data instance
 }
-\examples{
-put example here
-}

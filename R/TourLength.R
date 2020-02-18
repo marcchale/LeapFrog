@@ -4,8 +4,6 @@
 #' @param distMatrix A \code{n}x\code{n matrix} where first row is not column headers.
 #' Each cell represents the distance from the row index node to the column index node.
 #' @param tour A \code{numeric} vector with the order that the nodes in the coordMatrix are visited. Must be the same length as the coordMatrix
-#' @examples 
-#' put example here
 #' 
 
 TourLength <- function(distMatrix, tour){

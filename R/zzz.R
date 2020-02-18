@@ -15,7 +15,7 @@ LFStartupMessage <- function()
   # startup message
   msg <- LFStartupMessage()
   if(!interactive())
-    msg[1] <- paste("Package 'LF' version", packageVersion("LeapFrog"))
+    msg[1] <- paste("Package 'LF' version", utils::packageVersion("LeapFrog"))
   packageStartupMessage(msg)
   invisible()
 }

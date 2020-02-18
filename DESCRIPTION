@@ -26,7 +26,8 @@ Description: LeapFrog (LF) is a single agent metaheuristic search algorithm for 
              constrained by visuals found in the suggested packages.
 License: GPL (>= 2)
 Depends: R (>= 2.10),
-         reticulate
+         tibble,
+         utils
 Imports: Rcpp (>= 1.0.3),
          RcppNumerical,
          shiny
@@ -36,6 +37,6 @@ LinkingTo: Rcpp(>= 1.0.0),
            RcppNumerical
 RoxygenNote: 7.0.2
 Encoding: UTF-8
-SystemRequirements: python (>=3.5)
+SystemRequirements: 
 Suggests: 
     testthat

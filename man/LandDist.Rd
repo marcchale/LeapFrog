@@ -15,7 +15,3 @@ Each cell represents the distance from the row index node to the column index no
 \description{
 Takes a tour and distance matrix and returns the tour length
 }
-\examples{
-put example here
-
-}

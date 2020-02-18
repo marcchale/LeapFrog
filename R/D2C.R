@@ -4,8 +4,6 @@
 #' @export
 #' @param distMatrix A \code{n}x\code{n matrix} where first row is not column headers.
 #' Each cell represents the distance from the row index node to the column index node.
-#' @examples 
-#' put example here
 #' 
 D2C <- function(distMatrix){
   nodeCount <- dim(distMatrix)[1]
