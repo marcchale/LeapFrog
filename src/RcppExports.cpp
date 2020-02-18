@@ -6,79 +6,6 @@
 
 using namespace Rcpp;
 
-// MySummaryCpp
-Rcpp::List MySummaryCpp(NumericVector vecIn);
-RcppExport SEXP _LeapFrog_MySummaryCpp(SEXP vecInSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type vecIn(vecInSEXP);
-    rcpp_result_gen = Rcpp::wrap(MySummaryCpp(vecIn));
-    return rcpp_result_gen;
-END_RCPP
-}
-// dbeta4
-NumericVector dbeta4(NumericVector x, double min, double max, double shape1, double shape2, double gap);
-RcppExport SEXP _LeapFrog_dbeta4(SEXP xSEXP, SEXP minSEXP, SEXP maxSEXP, SEXP shape1SEXP, SEXP shape2SEXP, SEXP gapSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type min(minSEXP);
-    Rcpp::traits::input_parameter< double >::type max(maxSEXP);
-    Rcpp::traits::input_parameter< double >::type shape1(shape1SEXP);
-    Rcpp::traits::input_parameter< double >::type shape2(shape2SEXP);
-    Rcpp::traits::input_parameter< double >::type gap(gapSEXP);
-    rcpp_result_gen = Rcpp::wrap(dbeta4(x, min, max, shape1, shape2, gap));
-    return rcpp_result_gen;
-END_RCPP
-}
-// pbeta4
-NumericVector pbeta4(NumericVector q, double min, double max, double shape1, double shape2, double gap);
-RcppExport SEXP _LeapFrog_pbeta4(SEXP qSEXP, SEXP minSEXP, SEXP maxSEXP, SEXP shape1SEXP, SEXP shape2SEXP, SEXP gapSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type q(qSEXP);
-    Rcpp::traits::input_parameter< double >::type min(minSEXP);
-    Rcpp::traits::input_parameter< double >::type max(maxSEXP);
-    Rcpp::traits::input_parameter< double >::type shape1(shape1SEXP);
-    Rcpp::traits::input_parameter< double >::type shape2(shape2SEXP);
-    Rcpp::traits::input_parameter< double >::type gap(gapSEXP);
-    rcpp_result_gen = Rcpp::wrap(pbeta4(q, min, max, shape1, shape2, gap));
-    return rcpp_result_gen;
-END_RCPP
-}
-// qbeta4
-NumericVector qbeta4(NumericVector p, double min, double max, double shape1, double shape2);
-RcppExport SEXP _LeapFrog_qbeta4(SEXP pSEXP, SEXP minSEXP, SEXP maxSEXP, SEXP shape1SEXP, SEXP shape2SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type p(pSEXP);
-    Rcpp::traits::input_parameter< double >::type min(minSEXP);
-    Rcpp::traits::input_parameter< double >::type max(maxSEXP);
-    Rcpp::traits::input_parameter< double >::type shape1(shape1SEXP);
-    Rcpp::traits::input_parameter< double >::type shape2(shape2SEXP);
-    rcpp_result_gen = Rcpp::wrap(qbeta4(p, min, max, shape1, shape2));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rbeta4
-NumericVector rbeta4(int const n, double min, double max, double shape1, double shape2);
-RcppExport SEXP _LeapFrog_rbeta4(SEXP nSEXP, SEXP minSEXP, SEXP maxSEXP, SEXP shape1SEXP, SEXP shape2SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int const >::type n(nSEXP);
-    Rcpp::traits::input_parameter< double >::type min(minSEXP);
-    Rcpp::traits::input_parameter< double >::type max(maxSEXP);
-    Rcpp::traits::input_parameter< double >::type shape1(shape1SEXP);
-    Rcpp::traits::input_parameter< double >::type shape2(shape2SEXP);
-    rcpp_result_gen = Rcpp::wrap(rbeta4(n, min, max, shape1, shape2));
-    return rcpp_result_gen;
-END_RCPP
-}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP _LeapFrog_rcpp_hello_world() {
@@ -91,11 +18,6 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_LeapFrog_MySummaryCpp", (DL_FUNC) &_LeapFrog_MySummaryCpp, 1},
-    {"_LeapFrog_dbeta4", (DL_FUNC) &_LeapFrog_dbeta4, 6},
-    {"_LeapFrog_pbeta4", (DL_FUNC) &_LeapFrog_pbeta4, 6},
-    {"_LeapFrog_qbeta4", (DL_FUNC) &_LeapFrog_qbeta4, 5},
-    {"_LeapFrog_rbeta4", (DL_FUNC) &_LeapFrog_rbeta4, 5},
     {"_LeapFrog_rcpp_hello_world", (DL_FUNC) &_LeapFrog_rcpp_hello_world, 0},
     {NULL, NULL, 0}
 };
