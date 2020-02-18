@@ -27,9 +27,12 @@ Description: LeapFrog (LF) is a single agent metaheuristic search algorithm for 
 License: GPL (>= 2)
 Depends: R (>= 2.10),
          tibble,
-         utils
+         utils,
+         ggplot2
 Imports: Rcpp (>= 1.0.3),
          RcppNumerical,
+         tibble,
+         ggplot2,
          shiny
 LinkingTo: Rcpp(>= 1.0.0),
            BH(>= 1.58.0-1),

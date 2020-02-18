@@ -7,10 +7,18 @@
 LandDist(dMat, p, nodeCount, tour, jumpers, node)
 }
 \arguments{
+\item{dMat}{A \code{n}x\code{n matrix} where first row is not column headers.
+Each cell represents the distance from the row index node to the column index node.}
+
+\item{p}{A \code{numeric} that tells the function how many jumpers are being considered}
+
+\item{nodeCount}{The \code{numeric} number of nodes in the problem instance}
+
 \item{tour}{A \code{numeric} vector with the order that the nodes in the coordMatrix are visited. Must be the same length as the coordMatrix}
 
-\item{distMatrix}{A \code{n}x\code{n matrix} where first row is not column headers.
-Each cell represents the distance from the row index node to the column index node.}
+\item{jumpers}{An \code{integer vector} of the jumpers currently in the air}
+
+\item{node}{The \code{integer} specific jumper currently under consideration}
 }
 \description{
 Takes a tour and distance matrix and returns the tour length
