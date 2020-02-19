@@ -25,7 +25,7 @@ Description: LeapFrog (LF) is a single agent metaheuristic search algorithm for 
              the devtools package. There are no security concerns associated with LeapFrog. The map output is 
              constrained by visuals found in the suggested packages.
 License: GPL (>= 2)
-Depends: R (>= 2.10),
+Depends: R (>= 2.1),
          tibble,
          utils,
          ggplot2
