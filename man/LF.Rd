@@ -4,16 +4,7 @@
 \alias{LF}
 \title{LeapFrog metaheuristic search algorithm}
 \usage{
-LF(
-  distMatrix,
-  coordDF,
-  p = 1,
-  m = 1,
-  s = 10^-3,
-  r = 1,
-  a = 0,
-  monitor = if (interactive()) lfMonitor else FALSE
-)
+LF(distMatrix, coordDF, p = 1, m = 1, s = 10^-3, r = 1, a = 0, monitor = TRUE)
 }
 \arguments{
 \item{distMatrix}{A \code{n}x\code{n matrix} where first row is not column headers.

@@ -4,7 +4,7 @@
 \alias{PlotTour}
 \title{Plot coordinates with tour}
 \usage{
-PlotTour(coordDF, tour, latlong = FALSE)
+PlotTour(LFObj)
 }
 \arguments{
 \item{coordDF}{A \code{n}x\code{2 or 3} data.frame or tibble where first row is not column headers. 

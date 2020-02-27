@@ -4,7 +4,7 @@
 \alias{C2D}
 \title{Convert Coordinate Data.Frame to Distance Matrix}
 \usage{
-C2D(coordMatrix)
+C2D(coordinates, nodeCount)
 }
 \arguments{
 \item{coordMatrix}{A \code{n}x\code{2 or 3 data.frame} where first row is not column headers. 

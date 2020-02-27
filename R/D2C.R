@@ -1,7 +1,6 @@
 #' @title distMatrix to coordDF
 #' @description Takes a distance matrix and converts it into a coordinate tibble. D2C requires that the first three nodes of the distance matrix are not co-linear.
 #' 
-#' @export
 #' @param distMatrix A \code{n}x\code{n matrix} where first row is not column headers.
 #' Each cell represents the distance from the row index node to the column index node.
 #' 

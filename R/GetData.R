@@ -4,12 +4,12 @@
 #' @param course A \code{string} description of the desired instance information.
 #' 
 
-GetData <- function(course = c("eil51", "ts225", "pr1002", "gr120", "rat195", 
+GetData <- function(instance = c("eil51", "ts225", "pr1002", "gr120", "rat195", 
                              "Bays29", "Berlin52", "Cho130", "KroA100", 
                              "pcb442", "pr76", "gr48", "pma343"))
 {
   # Error handling
-  if(course %in% c("eil51", "ts225", "pr1002", "gr120", "rat195", 
+  if(instance %in% c("eil51", "ts225", "pr1002", "gr120", "rat195", 
                    "Bays29", "Berlin52", "Cho130", "KroA100", 
                    "pcb442", "pr76", "gr48", "pma343"))
   {}else{

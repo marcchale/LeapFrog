@@ -11,5 +11,5 @@ D2C(distMatrix)
 Each cell represents the distance from the row index node to the column index node.}
 }
 \description{
-Takes a distance matrix and converts it into a coordinate tibble
+Takes a distance matrix and converts it into a coordinate tibble. D2C requires that the first three nodes of the distance matrix are not co-linear.
 }
