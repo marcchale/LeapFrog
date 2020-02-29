@@ -62,17 +62,12 @@ paramTest <- function(nodeCount = 1,
   
   if(length(m) != 1) stop("Invalid Input: m must be a single integer")
   if(!is.numeric(m) | is.na(m) | m <= 0) stop("Invalid Input: m must be an integer greater than 0")
-  m <- as.integer(m)
   
   if(length(r) != 1) stop("Invalid Input: r must be a single integer")
   if(!is.numeric(r) | is.na(r) | r <= 0) stop("Invalid Input: r must be an integer greater than 0")
-  r <- as.integer(r)
   
   if(length(a) != 1) stop("Invalid Input: a must be a single value")
   if(!is.numeric(a) | is.na(a) | a < 0 | a > 1) stop("Invalid Input: a must be a single value [0,1]")
-  a <- a * r # Set a as a percentage of r
-  loss <- FALSE
-  if (a > 0) loss <- TRUE
   
   if(!(monitor %in% c(TRUE, FALSE))) stop("Invalid Input: monitor must be TRUE, FALSE, or plot")
 }

@@ -2,11 +2,7 @@
 #' @description Takes a distance matrix and searches for an optimal tour
 #' 
 #' @export
-#' @param distMatrix A \code{n}x\code{n matrix} where first row is not column headers.
-#' Each cell represents the distance from the row index node to the column index node.
-#' @param coordDF A \code{n}x\code{2 or 3} data.frame or tibble where first row is not column headers. 
-#' The first and second columns must contain the \code{x} and \code{y} coordinates of each node.
-#' The third column (optional) must contain ids for each node. 
+#' @param LFObj A LeapFrog class object created by running the ImportData() function.
 #' @param p A \code{double} (0,1] which represents the ratio of the maximum number of nodes removed in each iteration of the LF algorithm.
 #' @param m An \code{integer} (0,inf) which represents the number of games played
 #' @param s A \code{double} (0,1] which represents the uncertainty used in the first round of each game
@@ -17,8 +13,7 @@
 
 # p = players (0,1], r = rounds (0,inf), s = accuracy (0,1], m = games (0,inf), a = decayRate (0,1]
 
-LF <- function(distMatrix, 
-              coordDF, 
+LF <- function(LFObj, 
                p = 1,
                m = 1, 
                s = 10^-3, 
@@ -26,19 +21,19 @@ LF <- function(distMatrix,
                a = 0, 
                monitor = TRUE){
   # Tests
-  distMatrixTest(distMatrix)
-  nodeCount <- dim(distMatrix)[1]
+  nodeCount <- LFObj$nodeCount
   paramTest(nodeCount, p, m, s, r, a, monitor)
-  
-  if(!missing(coordDF)){
-    coordDF <- coordDFTest(coordDF)
-  }
-  
-  
+  m <- as.integer(m)
+  r <- as.integer(r)
+  a <- a * r # Set a as a percentage of r
+  loss <- FALSE
+  if (a > 0) loss <- TRUE
   
   # create initial random tour and get tour length
-  tour <- tourBest <- sample(1:nodeCount)
-  tourLength <- tourLengthBest <- TourLength(distMatrix, tour)
+  distances <- LFObj$distances
+  coordinates <- LFObj$coordinates
+  tour <- tourBest <- LFObj$tour
+  tourLength <- tourLengthBest <- LFObj$tourLength
   iterData <- matrix(NA, ncol = 4)
   colnames(iterData) <- c("Match", "Round", "Length", "Best")
   
@@ -63,7 +58,7 @@ LF <- function(distMatrix,
     
     # Land
     for(node in 1:ceiling(pPrime)){
-      landScores <- LandDist(distMatrix, ceiling(pPrime), nodeCount, tour, jumpers, node)
+      landScores <- LandDist(distances, ceiling(pPrime), nodeCount, tour, jumpers, node)
       if(gameIter == 1){
         placeSize <- round((nodeCount - ((nodeCount - 4) * p)) * s) #Place with selected accuracy
       } else {
@@ -81,7 +76,7 @@ LF <- function(distMatrix,
     }
     
     # Recalculate tour length
-    tourLength <- TourLength(distMatrix, tour)
+    tourLength <- TourLength(distances, tour)
     if (tourLength < tourLengthBest){
       tourBest <- tour
       tourLengthBest <- tourLength
@@ -96,22 +91,43 @@ LF <- function(distMatrix,
     }
     if (gameCount == m){
       iterData <- as.data.frame(na.omit(iterData))
-      iterPlot <- ggplot2::ggplot(data = iterData,
-                                  ggplot2::aes(x = Round,
-                                               y = Length,
-                                               color = factor(Match))) +
+      if(LFObj$knownOpt != 0){
+        goal <- LFObj$knownOpt
+      } else {
+        goal <- NA
+      }
+      LFObj$tour <- tourBest
+      LFObj$tourLength <- tourLengthBest
+      LFObj$p <- PlotTour(LFObj)
+      LFObj$lfHist <- ggplot2::ggplot(data = iterData,
+                                  ggplot2::aes(x = seq_len(m*r),#Round,
+                                               y = Length)) +
         ggplot2::geom_point() + 
         ggplot2::geom_hline(yintercept = tourLengthBest,
-                            color = "blue") +
-        ggplot2::theme(legend.position = "None") +
-        ggplot2::theme_classic()
+                            color = "red",
+                            linetype = "dashed") +
+        theme(
+          legend.position = c(.95, .95),
+          legend.justification = c("right", "top"),
+          legend.box.just = "right",
+          legend.margin = margin(6, 6, 6, 6)
+          ) +
+        # Title, axes, citation
+        ggplot2::labs(title = "LeapFrog Algorithm Iteration History",
+                      y = "Tour Length",
+                      x = "Iteration",
+                      caption = "Source: LeapFrog") +
+        ggplot2::theme_bw() +
+        annotate(geom="text", x=50, y=LFObj$tourLength, label="Best found",
+                 color="red")
+      if(!is.na(goal)){
+        LFObj$lfHist <- LFObj$lfHist + annotate(geom="text", x=25, y=goal, label="Best known",
+                                                color="blue") +
+          ggplot2::geom_hline(yintercept = goal,
+                              color = "blue")
+      }
       break
     }
-    
-    
   }
-  #setMethod("plot", "lf", plot.lf)
-  return(list(distance = tourLengthBest,
-              solution = tourBest,
-              iterPlot = iterPlot))
+  return(LFObj)
 }

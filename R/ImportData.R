@@ -74,7 +74,8 @@ ImportData <- function(distances = NULL,
                    p = NULL,
                    tourLength = TourLength(distances, tour),
                    knownOpt = knownOpt,
-                   latlon = latlon)
+                   latlon = latlon,
+                   lfHist = NULL)
   class(out.list) <- c("LFObj")
   out.list$p <- PlotTour(out.list)
   

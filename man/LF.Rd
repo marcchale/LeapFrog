@@ -4,15 +4,10 @@
 \alias{LF}
 \title{LeapFrog metaheuristic search algorithm}
 \usage{
-LF(distMatrix, coordDF, p = 1, m = 1, s = 10^-3, r = 1, a = 0, monitor = TRUE)
+LF(LFObj, p = 1, m = 1, s = 10^-3, r = 1, a = 0, monitor = TRUE)
 }
 \arguments{
-\item{distMatrix}{A \code{n}x\code{n matrix} where first row is not column headers.
-Each cell represents the distance from the row index node to the column index node.}
-
-\item{coordDF}{A \code{n}x\code{2 or 3} data.frame or tibble where first row is not column headers. 
-The first and second columns must contain the \code{x} and \code{y} coordinates of each node.
-The third column (optional) must contain ids for each node.}
+\item{LFObj}{A LeapFrog class object created by running the ImportData() function.}
 
 \item{p}{A \code{double} (0,1] which represents the ratio of the maximum number of nodes removed in each iteration of the LF algorithm.}
 
