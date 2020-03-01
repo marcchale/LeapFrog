@@ -4,13 +4,10 @@
 \alias{GetData}
 \title{Distance Data for the Travelling Salesman Problem}
 \usage{
-GetData(
-  instance = c("eil51", "ts225", "pr1002", "gr120", "rat195", "Bays29", "Berlin52",
-    "Cho130", "KroA100", "pcb442", "pr76", "gr48", "pma343")
-)
+GetData(instance = 1)
 }
 \arguments{
-\item{course}{A \code{string} description of the desired instance information.}
+\item{instance}{A \code{string} description of the desired instance information. The courses are listed in order: eil51, ts225, pr1002, gr120, rat195,Bays29, Berlin52, Cho130, KroA100, pcb442, pr76, gr48, pma343}
 }
 \description{
 Outputs a list containing the name, distance matrix, coordinate matrix, and known optimal value from a TSPLIB data instance

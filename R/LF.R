@@ -68,8 +68,8 @@ LF <- function(LFObj,
       tourPlaceRand <- sample(1:placeSize)[1]
       tourPlace <- order(landScores, decreasing = FALSE)[tourPlaceRand] # Pick the landing spot
       
-      if(tourPlace < length(tour)){
-        tour <- c(tour[1:tourPlace], jumpers[node], tour[(tourPlace + 1):length(tour)])
+      if(tourPlace < base::length(tour)){
+        tour <- c(tour[1:tourPlace], jumpers[node], tour[(tourPlace + 1):base::length(tour)])
       } else {
         tour <- c(tour, jumpers[node]) # Place the jumper in the chosen landing spot
       }
@@ -90,7 +90,7 @@ LF <- function(LFObj,
       if(monitor == T) lfMonitor(gameCount, tourLengthBest)
     }
     if (gameCount == m){
-      iterData <- as.data.frame(na.omit(iterData))
+      iterData <- as.data.frame(stats::na.omit(iterData))
       if(LFObj$knownOpt != 0){
         goal <- LFObj$knownOpt
       } else {
@@ -101,16 +101,16 @@ LF <- function(LFObj,
       LFObj$p <- PlotTour(LFObj)
       LFObj$lfHist <- ggplot2::ggplot(data = iterData,
                                   ggplot2::aes(x = seq_len(m*r),#Round,
-                                               y = Length)) +
+                                               y = tourLength)) +
         ggplot2::geom_point() + 
         ggplot2::geom_hline(yintercept = tourLengthBest,
                             color = "red",
                             linetype = "dashed") +
-        theme(
+        ggplot2::theme(
           legend.position = c(.95, .95),
           legend.justification = c("right", "top"),
           legend.box.just = "right",
-          legend.margin = margin(6, 6, 6, 6)
+          legend.margin = ggplot2::margin(6, 6, 6, 6)
           ) +
         # Title, axes, citation
         ggplot2::labs(title = "LeapFrog Algorithm Iteration History",
@@ -118,11 +118,11 @@ LF <- function(LFObj,
                       x = "Iteration",
                       caption = "Source: LeapFrog") +
         ggplot2::theme_bw() +
-        annotate(geom="text", x=50, y=LFObj$tourLength, label="Best found",
+        ggplot2::annotate(geom="text", x=50, y=LFObj$tourLength, label="Best found",
                  color="red")
-      if(!is.na(goal)){
-        LFObj$lfHist <- LFObj$lfHist + annotate(geom="text", x=25, y=goal, label="Best known",
-                                                color="blue") +
+      if(!base::is.na(goal)){
+        LFObj$lfHist <- LFObj$lfHist + ggplot2::annotate(geom="text", x=25, y=goal, label="Best known",
+                                                         color="blue") +
           ggplot2::geom_hline(yintercept = goal,
                               color = "blue")
       }

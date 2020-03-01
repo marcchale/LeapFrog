@@ -7,13 +7,7 @@
 PlotTour(LFObj)
 }
 \arguments{
-\item{coordDF}{A \code{n}x\code{2 or 3} data.frame or tibble where first row is not column headers. 
-The first and second columns must contain the \code{x} and \code{y} coordinates of each node.
-The third column (optional) must contain ids for each node.}
-
-\item{tour}{A \code{numeric} vector with the order that the nodes in the coordDF are visited. Must be the same length as the coordDF}
-
-\item{latlong}{A \code{boolean} value. \code{TRUE} if coordinates are latitudes and longitudes, \code{FALSE} otherwise.}
+\item{LFObj}{A \code{LeapFrog} class object}
 }
 \description{
 Takes a coordinate matrix and plots a tour through it

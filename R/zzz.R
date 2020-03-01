@@ -5,7 +5,7 @@ LFStartupMessage <- function()
     " __    ____    __    ____    ____  ____  _____  ___ 
 (  )  ( ___)  /__\\  (  _ \\  ( ___)(  _ \\(  _  )/ __)
  )(__  )__)  /(__)\\  )___/   )__)  )   / )(_)(( (_-.
-(____)(____)(__)(__)(__)    (__)  (_)\\_)(_____)\\___/ ", packageVersion("LeapFrog")),
+(____)(____)(__)(__)(__)    (__)  (_)\\_)(_____)\\___/ ", utils::packageVersion("LeapFrog")),
     "\nType 'citation(\"LeapFrog\")' for citing this R package in publications.")
   return(msg)
 }

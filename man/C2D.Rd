@@ -7,9 +7,11 @@
 C2D(coordinates, nodeCount)
 }
 \arguments{
-\item{coordMatrix}{A \code{n}x\code{2 or 3 data.frame} where first row is not column headers. 
+\item{coordinates}{A \code{n}x\code{2 or 3 data.frame} where first row is not column headers. 
 The first and second columns must contain the \code{x} and \code{y} coordinates of each node.
 The third column (optional) must contain ids for each node.}
+
+\item{nodeCount}{An \code{integer} number of nodes in coordinates}
 }
 \description{
 Convert coordinate Matrix into symmetric distance matrix using euclidean distance function

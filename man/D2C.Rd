@@ -2,12 +2,12 @@
 % Please edit documentation in R/D2C.R
 \name{D2C}
 \alias{D2C}
-\title{distMatrix to coordDF}
+\title{distances to coordDF}
 \usage{
-D2C(distMatrix)
+D2C(distances)
 }
 \arguments{
-\item{distMatrix}{A \code{n}x\code{n matrix} where first row is not column headers.
+\item{distances}{A \code{n}x\code{n matrix} where first row is not column headers.
 Each cell represents the distance from the row index node to the column index node.}
 }
 \description{
