@@ -11,11 +11,11 @@ LF(LFObj, p = 1, m = 1, s = 10^-3, r = 1, a = 0, monitor = TRUE)
 
 \item{p}{A \code{double} (0,1] which represents the ratio of the maximum number of nodes removed in each iteration of the LF algorithm.}
 
-\item{m}{An \code{integer} (0,inf) which represents the number of games played}
+\item{m}{An \code{integer} (1,inf) which represents the number of games played}
 
 \item{s}{A \code{double} (0,1] which represents the uncertainty used in the first round of each game}
 
-\item{r}{An \code{integer} (0,inf) which represents the number of rounds in each game}
+\item{r}{An \code{integer} (1,inf) which represents the number of rounds in each game}
 
 \item{a}{A \code{double} (0,1] which represents the variable number of players used in successive rounds}
 

@@ -4,9 +4,9 @@
 #' @export
 #' @param LFObj A LeapFrog class object created by running the ImportData() function.
 #' @param p A \code{double} (0,1] which represents the ratio of the maximum number of nodes removed in each iteration of the LF algorithm.
-#' @param m An \code{integer} (0,inf) which represents the number of games played
+#' @param m An \code{integer} (1,inf) which represents the number of games played
 #' @param s A \code{double} (0,1] which represents the uncertainty used in the first round of each game
-#' @param r An \code{integer} (0,inf) which represents the number of rounds in each game
+#' @param r An \code{integer} (1,inf) which represents the number of rounds in each game
 #' @param a A \code{double} (0,1] which represents the variable number of players used in successive rounds
 #' @param monitor A \code{boolean} or function used to display information during execution of the algorithm
 #' 
