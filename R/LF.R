@@ -20,6 +20,8 @@ LF <- function(LFObj,
                r = 1, 
                a = 0, 
                monitor = TRUE){
+  Length <- Best <- NULL
+  startTime <- base::proc.time()
   # Tests
   nodeCount <- LFObj$nodeCount
   paramTest(nodeCount, p, m, s, r, a, monitor)
@@ -35,7 +37,7 @@ LF <- function(LFObj,
   tour <- tourBest <- LFObj$tour
   tourLength <- tourLengthBest <- LFObj$tourLength
   iterData <- matrix(NA, ncol = 4)
-  colnames(iterData) <- c("Match", "Round", "Length", "Best")
+  colnames(iterData) <- c("Match", "Time", "Length", "Best")
   
   # begin algorithm
   gameIter <- 0
@@ -81,7 +83,8 @@ LF <- function(LFObj,
       tourBest <- tour
       tourLengthBest <- tourLength
     }
-    iterData <- rbind(iterData, c(gameCount + 1, gameIter, tourLength, tourLengthBest))
+    iterTime <- (base::proc.time() - startTime)[3]
+    iterData <- rbind(iterData, c(gameCount + 1, iterTime, tourLength, tourLengthBest))
     # Check game progress
     if (gameIter == r){
       gameIter <- 0 # Start a new game
@@ -90,7 +93,7 @@ LF <- function(LFObj,
       if(monitor == T) lfMonitor(gameCount, tourLengthBest)
     }
     if (gameCount == m){
-      iterData <- as.data.frame(stats::na.omit(iterData))
+      iterData <- as.data.frame(na.omit(iterData)) # na.omit?
       if(LFObj$knownOpt != 0){
         goal <- LFObj$knownOpt
       } else {
@@ -99,12 +102,13 @@ LF <- function(LFObj,
       LFObj$tour <- tourBest
       LFObj$tourLength <- tourLengthBest
       LFObj$p <- PlotTour(LFObj)
+      LFObj$time <- iterTime
       LFObj$lfHist <- ggplot2::ggplot(data = iterData,
-                                  ggplot2::aes(x = seq_len(m*r),#Round,
-                                               y = tourLength)) +
+                                  ggplot2::aes(x = Time,#Round,
+                                               y = Length)) +
         ggplot2::geom_point() + 
-        ggplot2::geom_hline(yintercept = tourLengthBest,
-                            color = "red",
+        ggplot2::geom_line(ggplot2::aes(y = Best),
+                            color = "green",
                             linetype = "dashed") +
         ggplot2::theme(
           legend.position = c(.95, .95),
@@ -115,19 +119,28 @@ LF <- function(LFObj,
         # Title, axes, citation
         ggplot2::labs(title = "LeapFrog Algorithm Iteration History",
                       y = "Tour Length",
-                      x = "Iteration",
+                      x = "Time",
                       caption = "Source: LeapFrog") +
         ggplot2::theme_bw() +
-        ggplot2::annotate(geom="text", x=50, y=LFObj$tourLength, label="Best found",
-                 color="red")
+        ggplot2::annotate(geom="text", 
+                          x = (max(iterData$Time) * 0.9), 
+                          y = LFObj$tourLength, 
+                          label = "Best found",
+                          color = "green")
       if(!base::is.na(goal)){
-        LFObj$lfHist <- LFObj$lfHist + ggplot2::annotate(geom="text", x=25, y=goal, label="Best known",
-                                                         color="blue") +
+        LFObj$lfHist <- LFObj$lfHist + 
+          ggplot2::annotate(geom="text", 
+                            x = (max(iterData$Time) * 0.1), 
+                            y = goal, 
+                            label = "Best known",
+                            color = "blue") +
           ggplot2::geom_hline(yintercept = goal,
                               color = "blue")
       }
       break
     }
   }
+  print(LFObj$p)
+  print(LFObj$lfHist)
   return(LFObj)
 }

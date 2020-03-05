@@ -4,6 +4,7 @@
 #' 
 
 PlotTour <- function(LFObj){
+  X <- Y <- ID <- NULL
   df <- LFObj$coordinates[LFObj$tour,]
   df <- rbind(df, df[1,])
   yOffset <- (range(df$Y)[2] - range(df$Y)[1]) * 0.025
