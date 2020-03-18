@@ -1,23 +1,43 @@
 --Review Categories--
 - Accuracy
   - Are the results accurate?
+  The analytics methods have been reviewed by AFIT faculty advisors.
+  The results are stored in the output object and are automatically plotted in R.
+  The results are very impressive and are on par with my expectations for a Huf heuristic.
+  Completely in line with my prior understanding of the LeapFrog heuristic.
+  
   - Is it clear how the results were computed?
+  Clear enough. To have a complete understanding of the LeapFrog heuristic one would require coursework in meta-heuristics
+  plus additional self study of the publication. The user knows how to find the publication if necissary. This is sufficient.
 
 - Compilation
   - Did the analytic work? (i.e. install correctly, startup correctly)
+  The package did install correctly. R asks me to update the dependency packages at install,
+  however I declined to do so and there were no negative repercussions. 
+  
   - Were errors encountered when executing code according to the documentation?
+    There were no errors. 
 
-- Ease of use
+ - Ease of use
   - Is it clear how to use the analytic? (i.e. is the documentation clear)
+    Documentation formatting is excellent
+    Documentation clarity is excellent
+    Very easy to get the package up and running with provided example
+    Add git install instructions to the README.md     devtools::install_github()
+    Add information about LeapFrogOutput class to the README.md
+
   - Are the visualizations/plots interpretable?
-  
-  
+      The plots are intuitive and follow the standard format for this field.
+      The plots were automatically generated, however, the plot tab did not come to the front automatically. 
+      Add title to the node map.
   
 --Rubric--
-- Outstanding – ready to publish/deploy (50 pts)
-  - All proposal tasks completed
-  - Documentation is thorough and clear
-  - No errors or warnings during build/use
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+|- Outstanding – ready to publish/deploy (50 pts)    |     _ _ _ _
+|  - All proposal tasks completed                    |   |         |
+|  - Documentation is thorough and clear             |   | 49.75/50|
+|  - No errors or warnings during build/use          |   | _ _ _ _ |
+|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |
 
 - Excellent – very little rework required (45 pts)
   - Few proposal tasks incomplete
